@@ -31,10 +31,8 @@ This repository explores three complementary techniques:
 
 The experiments use clean and corrupted prompts to investigate how GPT-2 represents semantic information and how attention and MLP components contribute to the final prediction.
 
-### Draft Figure: Activation Patching + Logit Lens
-
 <p align="center">
-  <svg width="960" height="300" viewBox="0 0 960 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Draft diagram showing activation patching and logit lens experiments on GPT-2">
+  <svg width="960" height="300" viewBox="0 0 960 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing activation patching and logit lens experiments on GPT-2">
     <defs>
       <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
         <stop offset="0%" stop-color="#0f172a"/>
@@ -98,7 +96,7 @@ The experiments use clean and corrupted prompts to investigate how GPT-2 represe
     <rect x="240" y="215" width="480" height="48" rx="12" class="box"/>
     <text x="480" y="245" text-anchor="middle" class="label">Logit Lens / DLA / Causal intervention</text>
 
-    <text x="480" y="286" text-anchor="middle" class="small">Draft visual summary for interpreting how specific components shift final token predictions.</text>
+    <text x="480" y="286" text-anchor="middle" class="small">Visual summary for interpreting how specific components shift final token predictions.</text>
   </svg>
 </p>
 
