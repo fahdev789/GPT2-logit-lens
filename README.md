@@ -12,9 +12,7 @@ If you want to explore and read the experiment techniques, please consider the b
   <img src="./Token-Evolution.png" alt="Evolution of Final Token across GPT-2 Layers" width="800" />
 </p>
 
-A hands-on exploration of **Mechanistic Interpretability (Mech. Interp.)** using [TransformerLens](https://github.com/TransformerLensOrg/TransformerLens). This project investigates how information flows through GPT-2 and how localized interventions affect model behavior.
-
-The goal is to identify which layers and components contribute to specific token predictions and to understand how localized interventions affect model behavior.
+A hands-on exploration of **Mechanistic Interpretability (Mech. Interp.)** using [TransformerLens](https://github.com/TransformerLensOrg/TransformerLens). This project investigates how information flows through GPT-2. The important thing the model starts considering the token from Layer 11, which specifically helps that the earlier layers L0-L10 are not really participating in the model's prediction. Sorry this is the finished experiment output because the aim is to give you a very specific high focus overview of the model behavior. Rather than spending weeks to study the code through this you can easily develop the concepts. 
 
 ## 🔍 Project Overview
 
