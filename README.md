@@ -1,5 +1,9 @@
 # Activation Patching & Logit Lens on GPT-2
 
+<p align="center">
+  <img src="./Token-Evolution.png" alt="Evolution of Final Token across GPT-2 Layers" width="800" />
+</p>
+
 A hands-on exploration of **Mechanistic Interpretability (Mech. Interp.)** using [TransformerLens](https://github.com/TransformerLensOrg/TransformerLens). This project investigates how information flows through GPT-2 and how localized interventions affect model behavior.
 
 The goal is to identify which layers and components contribute to specific token predictions and to understand how localized interventions affect model behavior.
@@ -30,75 +34,6 @@ This repository explores three complementary techniques:
 - **Direct Logit Attribution (DLA):** Measure how individual attention heads and other components contribute to a target token's logit.
 
 The experiments use clean and corrupted prompts to investigate how GPT-2 represents semantic information and how attention and MLP components contribute to the final prediction.
-
-<p align="center">
-  <svg width="960" height="300" viewBox="0 0 960 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing activation patching and logit lens experiments on GPT-2">
-    <defs>
-      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#0f172a"/>
-        <stop offset="100%" stop-color="#111827"/>
-      </linearGradient>
-      <linearGradient id="cleanGrad" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stop-color="#86efac"/>
-        <stop offset="100%" stop-color="#4ade80"/>
-      </linearGradient>
-      <linearGradient id="corrGrad" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stop-color="#f9a8d4"/>
-        <stop offset="100%" stop-color="#f472b6"/>
-      </linearGradient>
-      <linearGradient id="patchGrad" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stop-color="#93c5fd"/>
-        <stop offset="100%" stop-color="#60a5fa"/>
-      </linearGradient>
-      <style>
-        .title { font: 700 22px sans-serif; fill: #e5e7eb; }
-        .label { font: 600 15px sans-serif; fill: #e5e7eb; }
-        .small { font: 500 12px sans-serif; fill: #cbd5e1; }
-        .box { stroke: #94a3b8; stroke-width: 2; fill: rgba(15,23,42,0.75); }
-        .clean { fill: url(#cleanGrad); opacity: 0.92; }
-        .corr { fill: url(#corrGrad); opacity: 0.92; }
-        .patch { fill: url(#patchGrad); opacity: 0.92; }
-        .arrow { stroke: #cbd5e1; stroke-width: 3; fill: none; marker-end: url(#arrowHead); }
-      </style>
-      <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-        <path d="M0,0 L0,6 L9,3 z" fill="#cbd5e1"/>
-      </marker>
-    </defs>
-
-    <rect x="0" y="0" width="960" height="300" fill="url(#bg)" rx="18"/>
-
-    <text x="480" y="34" text-anchor="middle" class="title">GPT-2: Activation Patching &amp; Logit Lens</text>
-
-    <rect x="40" y="75" width="150" height="110" rx="12" class="box clean"/>
-    <text x="115" y="100" text-anchor="middle" class="label">Clean prompt</text>
-    <text x="115" y="125" text-anchor="middle" class="small">My dog is a good</text>
-    <text x="115" y="160" text-anchor="middle" class="small">Residual stream</text>
-
-    <rect x="260" y="75" width="170" height="110" rx="12" class="box"/>
-    <text x="345" y="105" text-anchor="middle" class="label">Transformer layers</text>
-    <text x="345" y="130" text-anchor="middle" class="small">Layer-wise features</text>
-    <text x="345" y="155" text-anchor="middle" class="small">attention + MLP</text>
-
-    <rect x="500" y="75" width="170" height="110" rx="12" class="box corr"/>
-    <text x="585" y="100" text-anchor="middle" class="label">Corrupted prompt</text>
-    <text x="585" y="125" text-anchor="middle" class="small">My cat is a good</text>
-    <text x="585" y="160" text-anchor="middle" class="small">Competing logits</text>
-
-    <rect x="710" y="75" width="210" height="110" rx="12" class="box patch"/>
-    <text x="815" y="100" text-anchor="middle" class="label">Patched activations</text>
-    <text x="815" y="125" text-anchor="middle" class="small">Swap clean residuals</text>
-    <text x="815" y="160" text-anchor="middle" class="small">Measure recovery</text>
-
-    <path d="M190 130 H260" class="arrow"/>
-    <path d="M430 130 H500" class="arrow"/>
-    <path d="M670 130 H710" class="arrow"/>
-
-    <rect x="240" y="215" width="480" height="48" rx="12" class="box"/>
-    <text x="480" y="245" text-anchor="middle" class="label">Logit Lens / DLA / Causal intervention</text>
-
-    <text x="480" y="286" text-anchor="middle" class="small">Visual summary for interpreting how specific components shift final token predictions.</text>
-  </svg>
-</p>
 
 This diagram is a working draft to visualize the core experimental flow: compare a clean and corrupted prompt, isolate layerwise feature contributions, and patch activations to quantify recovery in the final prediction.
 
