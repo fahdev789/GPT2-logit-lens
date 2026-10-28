@@ -14,6 +14,7 @@ If you want to explore and read the experiment techniques, please consider the b
 
 A hands-on exploration of **Mechanistic Interpretability (Mech. Interp.)** using [TransformerLens](https://github.com/TransformerLensOrg/TransformerLens). This project investigates how information flows through GPT-2. The important thing the model starts considering the token from Layer 11, which specifically helps that the earlier layers L0-L10 are not really participating in the model's prediction. Sorry this is the finished experiment output because the aim is to give you a very specific high focus overview of the model behavior. Rather than spending weeks to study the code through this you can easily develop the concepts. 
 
+During the exploration, you will see three words will occur as baseline which tries to pull the model attention `is a good`. When the prompt transitions from "dog" to "cat", the semantic context shifts, sometimes causing unpredictable logit fluctuations in the underlying vocabulary space.
 ## 🔍 Project Overview
 
 This repository explores three complementary techniques:
@@ -69,8 +70,6 @@ This illustrates why raw logits should not be interpreted as direct measurements
 - **Residual stream representations:** The clean and corrupted prompts produce different combinations of semantic and syntactic features.
 - **Layer normalization:** GPT-2 applies final layer normalization before the unembedding operation, changing the scale and distribution of the representation.
 - **Shared contextual features:** Both `' dog'` and `' cat'` may align with features associated with the continuation pattern *"is a good [noun]"*.
-
-> **Key takeaway:** A token's raw logit reflects the combined effects of many features. A corrupted prompt can therefore increase a token's logit even when the semantic context becomes less appropriate.
 
 
 
