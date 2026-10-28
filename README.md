@@ -1,4 +1,4 @@
-# Activation Patching & Logit Lens on GPT-2 
+# How the representation of the token evolve at different time steps? 
 
 [!How to use and interpret Activation Patching](https://arxiv.org/pdf/2404.15255)
 
