@@ -25,6 +25,10 @@ This repository explores three complementary techniques:
 
 The experiments use clean and corrupted prompts to investigate how GPT-2 represents semantic information and how attention and MLP components contribute to the final prediction.
 
+<p align="center">
+  <img src="./component-token-evolution.png" alt="Token Evolution across GPT-2 Components" width="800" />
+</p>
+
 ## 🧪 Experimental Setup
 
 The experiments use a simple prompt-corruption setup to investigate how changing a single word affects the model's internal representations.
