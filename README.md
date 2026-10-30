@@ -86,6 +86,7 @@ This illustrates why raw logits should not be interpreted as direct measurements
 ## Questions
 
 - If you have any questions, I would love to have a chat. You can send me the email. Thanks for your time to see the repo.
+- a first name 8990 at gmail dot com
 ---
 ## 📝 License
 
