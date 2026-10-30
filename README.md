@@ -45,7 +45,7 @@ My dog is a good
 My cat is a good
 ```
 
-The objective is to understand how replacing `dog` with `cat` affects the residual stream, intermediate token predictions, and downstream model behavior.
+The objective is to understand how replacing `dog` with `catcher` affects the residual stream, intermediate token predictions, and downstream model behavior.
 
 Activation patching allows activations from the clean run to be substituted into the corrupted run at selected layers or components. The resulting change in the target metric helps identify which internal pathways are most responsible for the final output.
 
@@ -75,19 +75,6 @@ This illustrates why raw logits should not be interpreted as direct measurements
 - **Layer normalization:** GPT-2 applies final layer normalization before the unembedding operation, changing the scale and distribution of the representation.
 - **Shared contextual features:** Both `' dog'` and `' cat'` may align with features associated with the continuation pattern *"is a good [noun]"*.
 
-
-
-## 🚀 Future Work
-
-Potential extensions to this project include:
-
-- **Automated activation-patching sweeps:** Expand `src/patching_sweep.py` to evaluate interventions across layers and token positions.
-- **Component-level comparisons:** Compare attention heads, attention outputs, and MLP outputs under consistent experimental conditions.
-- **Recovery visualizations:** Plot causal recovery across layers and token positions to identify potential circuit bottlenecks.
-- **Metric validation:** Compare absolute target logits, target-versus-foil logit differences, and probability-based measurements.
-- **Prompt generalization:** Repeat experiments with additional prompts to test whether observed patterns generalize beyond a single example.
-
----
 
 ## 📚 References
 
